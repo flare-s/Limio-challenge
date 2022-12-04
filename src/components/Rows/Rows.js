@@ -4,7 +4,6 @@ const Rows = ({ rows, turn, guess }) => {
     <div>
       {rows.map((row, i) => {
         if (i === turn) {
-          console.log("y");
           return <Row key={i} guess={guess} />;
         }
         return <Row key={i} row={row} />;

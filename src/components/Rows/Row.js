@@ -1,5 +1,5 @@
 import styles from "./Row.module.scss";
-const Row = ({ guess }) => {
+const Row = ({ guess, row }) => {
   if (guess) {
     return (
       <div className={styles.row}>
@@ -8,6 +8,19 @@ const Row = ({ guess }) => {
         })}
         {[...Array(5 - guess.length)].map((_, i) => (
           <div key={i}></div>
+        ))}
+      </div>
+    );
+  }
+
+  if (row) {
+    console.log("h");
+    return (
+      <div className={styles.row}>
+        {row.map((g, i) => (
+          <div key={i} className={styles[g.color]}>
+            {g.key}
+          </div>
         ))}
       </div>
     );

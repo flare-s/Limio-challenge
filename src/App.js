@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import Rows from "./components/Rows";
+import Keyboard from "./components/Keyboard";
 function App() {
+  const [rows, setRows] = useState([...Array(6)]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <h1>Wordle</h1>
       </header>
-    </div>
+      <main>
+        <Rows rows={rows} />
+        <Keyboard />
+      </main>
+    </>
   );
 }
 

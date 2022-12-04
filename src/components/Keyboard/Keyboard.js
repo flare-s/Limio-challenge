@@ -1,7 +1,8 @@
-import { keys } from "../data";
+import { keys } from "../../data";
+import styles from "./Keyboard.module.scss";
 const Keyboard = () => {
   return (
-    <div>
+    <div className={styles.keyboard}>
       {keys.map((key) => (
         <div>{key.key}</div>
       ))}

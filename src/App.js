@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Rows from "./components/Rows";
-import Keyboard from "./components/Keyboard";
+import Rows from "./components/Rows/Rows";
+import Keyboard from "./components/Keyboard/Keyboard";
 function App() {
   const [rows, setRows] = useState([...Array(6)]);
   return (
@@ -9,8 +9,10 @@ function App() {
         <h1>Wordle</h1>
       </header>
       <main>
-        <Rows rows={rows} />
-        <Keyboard />
+        <div className="container">
+          <Rows rows={rows} />
+          <Keyboard />
+        </div>
       </main>
     </>
   );
